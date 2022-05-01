@@ -13,11 +13,11 @@ const { NotImplementedError } = require('../extensions/index.js')
  */
 
 function getSeason(date) {
-    if (
-        isNaN(date.getMonth()) ||
-        !(Object.prototype.toString.call(date) === '[Object Date]')
-    )
-        throw new Error('Invalid date!')
+    // if (
+    //     isNaN(date.getMonth()) ||
+    //     !(Object.prototype.toString.call(date) === '[Object Date]')
+    // )
+    //     throw new Error('Invalid date!')
 
     try {
         switch (date.getMonth()) {
