@@ -19,7 +19,7 @@ function transform(arr) {
 
     let current = arr.slice()
 
-    for (let i = 0; i < current.length; i++) {
+    for (let i = 0; i <= current.length - 1; i++) {
         if (current[i] === '--discard-next') {
             current[i] = 'remove'
             current[i + 1] = 'remove'
