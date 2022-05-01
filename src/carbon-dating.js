@@ -29,8 +29,8 @@ function dateSample(sampleActivity) {
 
     if (number < 0 || isNaN(number)) return false
 
-    let calcValue = 0.693 / HALF_LIFE_PERIOD
-    let caluclated = Math.log(MODERN_ACTIVITY / number) / calcValue
+    let carbon = 0.693 / HALF_LIFE_PERIOD
+    let caluclated = Math.log(MODERN_ACTIVITY / number) / carbon
 
     if (caluclated < 0 || caluclated === Infinity) return false
 
