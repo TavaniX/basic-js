@@ -15,10 +15,10 @@ const { NotImplementedError } = require('../extensions/index.js')
 function getSeason(date) {
     if (date instanceof Date) {
         if (isNaN(date.getMonth()))
-            return 'Unable to determine the time of the year'
+            return 'Unable to determine the time of year!'
 
         if (!(Object.prototype.toString.call(date) === '[Object Date]'))
-            return 'Unable to determine the time of the year'
+            return 'Unable to determine the time of year!'
 
         try {
             switch (date.getMonth()) {
