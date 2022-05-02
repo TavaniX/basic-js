@@ -22,18 +22,6 @@ function repeater(str, options) {
     const addition = String(options['addition']) || ''
     const additionRepeat = options['additionRepeatTimes'] || 1
     const additionSeparator = options['additionSeparator'] || '|'
-
-    function repeatBasicValues(amount, value, separator) {
-        return new Array(amount).fill(value).join(separator)
-    }
-
-    basicRepeats = repeatBasicValues(
-        additionRepeat,
-        addition,
-        additionSeparator
-    )
-
-    return repeatBasicValues(repeat, `${string}${basicRepeats}`, separator)
 }
 
 module.exports = {
