@@ -23,19 +23,17 @@ function repeater(str, options) {
     const additionRepeat = options['additionRepeatTimes'] || 1
     const additionSeparator = options['additionSeparator'] || '|'
 
-    console.log(separator)
-
-    let repeatedAdditions = ''
-
-    if (addition) {
-        repeatedAdditions = (addition + additionSeparator)
-            .repeat(additionRepeat)
-            .slice(0, repeatedAdditions.length - additionRepeat.length)
+    function repeatBasicValues(amount, value, separator) {
+        return new Array(amount).fill(value).join(separator)
     }
 
-    let result = (string + repeatedAdditions + separator).repeat(repeat)
+    basicRepeats = repeatBasicValues(
+        additionRepeat,
+        addition,
+        additionSeparator
+    )
 
-    return result.slice(0, result.length - separator.length)
+    return repeatBasicValues(repeat, `${string}${basicRepeats}`, separator)
 }
 
 module.exports = {
