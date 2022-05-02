@@ -17,17 +17,17 @@ function transform(arr) {
     if (!Array.isArray(arr))
         throw new Error(`'arr' parameter must be an instance of the Array!`)
 
-    let current = arr.slice()
+    let current = [...arr]
 
     for (let i = 0; i < current.length; i++) {
         if (current[i] === '--discard-next') {
-            current[i] = 'remove'
-            current[i + 1] = 'remove'
+            current[i] = 'discard'
+            current[i + 1] = 'discard'
         }
 
         if (current[i] === '--discard-prev') {
-            current[i] = 'remove'
-            current[i - 1] = 'remove'
+            current[i] = 'discard'
+            current[i - 1] = 'discard'
         }
 
         if (current[i] === '--double-next') {
@@ -39,9 +39,9 @@ function transform(arr) {
         }
     }
 
-    let result = current.filter((elem) => elem !== 'remove')
+    let result = current.filter((elem) => elem !== 'discard')
 
-    return result
+    return result.filter((elem) => elem != undefined)
 }
 
 module.exports = {
