@@ -22,6 +22,20 @@ function repeater(str, options) {
     const addition = String(options['addition']) || ''
     const additionRepeat = options['additionRepeatTimes'] || 1
     const additionSeparator = options['additionSeparator'] || '|'
+
+    console.log(separator)
+
+    let repeatedAdditions = ''
+
+    if (addition) {
+        repeatedAdditions = (addition + additionSeparator)
+            .repeat(additionRepeat)
+            .slice(0, repeatedAdditions.length - additionRepeat.length)
+    }
+
+    let result = (string + repeatedAdditions + separator).repeat(repeat)
+
+    return result.slice(0, result.length - separator.length)
 }
 
 module.exports = {
